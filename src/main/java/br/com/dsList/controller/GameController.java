@@ -2,7 +2,9 @@ package br.com.dsList.controller;
 
 import br.com.dsList.dto.GameDto;
 import br.com.dsList.dto.GameMinDto;
+import br.com.dsList.entities.GameList;
 import br.com.dsList.services.GameService;
+import org.apache.logging.log4j.util.PerformanceSensitive;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +19,8 @@ public class GameController { //implementa API
 
     @Autowired
     private GameService gameService;
+
+
 
     @GetMapping(value = "/{id}")
     public GameDto findById(@PathVariable Long id) {
